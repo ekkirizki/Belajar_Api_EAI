@@ -170,6 +170,7 @@ return [
         //  API
 
         Bioudi\LaravelMetaWeatherApi\WeatherserviceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -231,6 +232,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        //tambahan socialite
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     ],
 
 ];

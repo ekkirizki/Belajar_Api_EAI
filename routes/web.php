@@ -14,8 +14,13 @@
 Route::get('/', function () {
     return view('welcome');    
 });
-Route::get('/cuaca2', 'KontrolerCuaca@index');
+
+Route::get('/cuaca2', 'KontrolerCuaca@index')->middleware('auth');
 // Route::get('/cuaca2', 'KontrolerYutub@index');
+
+Route::get('/film', function () {
+    return view('film');
+})->middleware('auth');
 
 Route::get('/anime', function () {
     return view('anime');
@@ -29,3 +34,35 @@ Route::get('/cuaca', function () {
 });
 
 Route::get('/cuaca1', 'KontrolerCuaca1@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
+Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
+
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+
+//default route dari laravel
+// Route::get('login/github', 'Auth\LoginController@redirectToProvider');
+// Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
+
+// Route::get('auth/github', 'Auth\LoginController@redirectToProvider');
+// Route::get('auth/github/callback', 'Auth\LoginController@handleProviderCallback');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

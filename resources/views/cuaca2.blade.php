@@ -11,24 +11,28 @@
         margin-left: auto;
         margin-right: auto;
     }
-    .spasi{
-        margin-bottom: 30px;
+    .spasi_bawah{
+        margin-bottom: 30px;        
+    }
+    .spasi_atas{
+        margin-top: 30px;
     }
     .txt_tengah{
         text-align: center;
     }
     </style>
 </head>
-<body>
+@extends('layouts.app')
+@section('content')
     <div class="container-fluid">
-        <div class="container spasi">
+        <div class="container spasi_bawah">
             <div class="row text-lg-center">
                 <div class="col">
             <h1>Percobaan Yang Q Cinta</h1>
         </div>
     </div>
     </div>    
-            <div class="container spasi">
+            <div class="container spasi_bawah">
                     <div class="row">
                       <div class="col">
                         <h1>Cuaca saat ini</h1>
@@ -41,7 +45,7 @@
                       <div class="col">
                           <div class="row">
                               <div class="col">
-                                  <div class="row spasi">
+                                  <div class="row spasi_bawah">
                                       <div class="col-md-3">
                                           <img src="<?php echo $yutub['items'][0]['snippet']['thumbnails']['medium']['url']; ?>" alt="<?php echo $yutub['items'][0]['snippet']['title']; ?>"
                                           class="rounded-circle img-thumbnail" width="100">
@@ -54,15 +58,17 @@
                               <div class="row">
                                   <div class="col">
                                       <div class="embed-responsive embed-responsive-16by9">
-                                          <iframe src="https://www.youtube.com/embed/bd_BoU_pb40" frameborder="0" allowfullscreen></iframe>
+                                          <iframe src="https://www.youtube.com/embed/<?php echo $video['items'][0]['id']['videoId'] ?>" frameborder="0" allowfullscreen></iframe>
                                       </div>                                      
                                   </div>
                               </div>
                                   </div>                   
                               </div>
-                          </div>
-                        <!--<?php echo $yutub['items'][0]['snippet']['thumbnails']['medium']['url']; ?>-->
+                          </div>                        
+                      </div>                      
+                      <div class="container-fluid text-lg-center spasi_atas">
+                          Another trial
+                          <a href="{{url('film')}}"> Click Me ;) 🔥🔥🔥🔥🔥 </a>
                       </div>
                     </div>
-</body>
-</html>
+@endsection
